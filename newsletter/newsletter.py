@@ -46,7 +46,8 @@ class Newsletter:
         words = self.clean_text(" ".join(self.articles['title'].values))
         self.setup_wordcloud(words, category)
 
-    def setup_wordcloud(self, words, category):
+    @staticmethod
+    def setup_wordcloud(words, category):
         stopwords = ['un', 'une', 'pour', 'et', 'le', 'la', 'de', 'sur', 'ca', 'ce', 'celui', 'a', 'en', 'les', 'des',
                      'lui', 'ont', 'video', 'qui', 'tres', 'deja', 'il', 'elle', 'lui', 'du', 'ne', 'pas', 'se',
                      'son', 'sa', 'dans', 'photo', 'apres', 'au', 'par', 'est', 'avec', 'voici', "d'un", "d'une",
@@ -59,7 +60,8 @@ class Newsletter:
         filepath = join(pictures_dir, filename)
         wordcloud.to_file(filepath)
 
-    def clean_text(self, text):
+    @staticmethod
+    def clean_text(text):
         cleaned_text = clean(text,
                                         fix_unicode=True,  # fix various unicode errors
                                         to_ascii=True,  # transliterate to closest ASCII representation
