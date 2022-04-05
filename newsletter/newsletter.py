@@ -17,7 +17,7 @@ class Newsletter:
 
     @staticmethod
     def load_mails():
-        filepath = join(Path(dirname(__file__)).parent, 'subscribers_test.csv')
+        filepath = join(Path(dirname(__file__)).parent, 'subscribers.csv')
         return pd.read_csv(filepath)['Email'].tolist()
 
     def generate_wordcloud(self):
