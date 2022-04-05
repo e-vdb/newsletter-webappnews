@@ -50,7 +50,8 @@ class Newsletter:
         stopwords = ['un', 'une', 'pour', 'et', 'le', 'la', 'de', 'sur', 'ca', 'ce', 'celui', 'a', 'en', 'les', 'des',
                      'lui', 'ont', 'video', 'qui', 'tres', 'deja', 'il', 'elle', 'lui', 'du', 'ne', 'pas', 'se',
                      'son', 'sa', 'dans', 'photo', 'apres', 'au', 'par', 'est', 'avec', 'voici', "d'un", "d'une",
-                     "photos", "videos", 'ans', 'ete', "encore", "sous", "sur"]
+                     "photos", "videos", 'ans', 'ete', "encore", "sous", "sur", "je", "tu", "pour", "n'", "deux",
+                     "apres", 'avant', 'mais', "qu'",  "quoi", "que"]
         wordcloud = WordCloud(colormap='YlOrRd', stopwords=stopwords)
         wordcloud.generate(words)
         filename = 'wordcloud_' + category + '_' + now.strftime("%d_%m_%Y") + '.png'
