@@ -60,8 +60,9 @@ class Mail:
             mail.attach(html_content)
 
             ## attaching an attachment
-            filename = 'wordcloud_fig/wordcloud_ACTU_' + NOW.strftime("%d_%m_%Y") + '.png'
-            file_path = join(Path(dirname(__file__)), filename)
+            filename = 'wordcloud_ACTU_' + NOW.strftime("%d_%m_%Y") + '.png'
+            pictures_dir = join(Path(dirname(__file__)).parent, 'wordcloud_fig')
+            file_path = join(pictures_dir, filename)
             mimeBase = MIMEBase("application", "octet-stream")
             with open(file_path, "rb") as file:
                 mimeBase.set_payload(file.read())

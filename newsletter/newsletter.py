@@ -6,7 +6,7 @@ from pathlib import Path
 from os.path import dirname, join
 
 from news_scraper.rtl_parser import RtlParser
-from mail_attachment import Mail
+from mail.mail_attachment import Mail
 
 now = datetime.now()
 
@@ -17,7 +17,7 @@ class Newsletter:
 
     @staticmethod
     def load_mails():
-        filepath = join(Path(dirname(__file__)), 'subscribers.csv')
+        filepath = join(Path(dirname(__file__)).parent, 'subscribers_test.csv')
         return pd.read_csv(filepath)['Email'].tolist()
 
     def generate_wordcloud(self):
@@ -53,8 +53,9 @@ class Newsletter:
                      "photos", "videos", 'ans', 'ete', "encore", "sous", "sur"]
         wordcloud = WordCloud(colormap='YlOrRd', stopwords=stopwords)
         wordcloud.generate(words)
-        filename = 'wordcloud_fig/wordcloud_' + category + '_' + now.strftime("%d_%m_%Y") + '.png'
-        filepath = join(Path(dirname(__file__)), filename)
+        filename = 'wordcloud_' + category + '_' + now.strftime("%d_%m_%Y") + '.png'
+        pictures_dir = join(Path(dirname(__file__)).parent, 'wordcloud_fig')
+        filepath = join(pictures_dir, filename)
         wordcloud.to_file(filepath)
 
     def clean_text(self, text):
