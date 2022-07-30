@@ -5,10 +5,18 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 import os
+
 from dotenv import load_dotenv
 from datetime import datetime
 from pathlib import Path
 from os.path import dirname, join
+from mail.utils import get_env_var
+from mail.constants import (
+    PASSWORD,
+    PORT,
+    SENDER,
+    SERVER,
+)
 
 load_dotenv()
 
@@ -19,10 +27,10 @@ WEEKDAY = NOW.weekday()
 class Mail:
 
     def __init__(self):
-        self.port = os.getenv('PORT')
-        self.smtp_server_domain_name = os.getenv('SERVER')
-        self.sender_mail = os.getenv('SENDER')
-        self.password = os.getenv('PASSWORD')
+        self.port = get_env_var(PORT)
+        self.smtp_server_domain_name = get_env_var(SERVER)
+        self.sender_mail = get_env_var(SENDER)
+        self.password = get_env_var(PASSWORD)
 
     def send(self, emails):
         ssl_context = ssl.create_default_context()
