@@ -1,0 +1,7 @@
+beautifulsoup4
+clean-text
+pandas
+python-dotenv
+requests
+smtplib
+wordcloud
