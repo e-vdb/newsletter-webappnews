@@ -3,5 +3,4 @@ clean-text
 pandas
 python-dotenv
 requests
-smtplib
 wordcloud
