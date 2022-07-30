@@ -1,6 +1,7 @@
 """Utility code for the mail client."""
 
 from mail.constants import DOTENV_PATH
+from os import getenv
 
 
 def get_env_var(varname: str) -> str:
