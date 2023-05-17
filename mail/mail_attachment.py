@@ -48,7 +48,6 @@ class Mail:
 
                     Bonjour {email.split('@')[0]},
                     Voici un petit aperçu des sujets de l'actualité de ce {NOW.strftime("%d-%m-%Y")}.
-                    Visitez https://app-news-be.herokuapp.com/ pour plus d'actualité.
                     Passez une bonne journée et à {'demain' if WEEKDAY != 4 else 'lundi'} pour de nouvelles infos.
                     """
             html_template = f"""
@@ -56,7 +55,6 @@ class Mail:
 
                     <p>Bonjour {email.split('@')[0]},</p>
                     <p>Voici un petit aperçu des sujets de l'actualité de ce <b>{NOW.strftime("%d-%m-%Y")}<b>.<p>
-                    <p>Visitez https://app-news-be.herokuapp.com/ pour plus d'actualité. <p>
                     <p>Passez une bonne journée et à {'demain' if WEEKDAY != 4 else 'lundi'} pour de nouvelles infos.<p>
                     """
 
