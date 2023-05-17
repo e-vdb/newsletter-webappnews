@@ -1,6 +1,6 @@
 # newsletter-webappnews
 
-![daily_cronjob](https://github.dev/e-vdb/newsletter-webappnews/actions/workflows/run_app.yml/badge.svg)
+![daily_cronjob](https://github.com/e-vdb/newsletter-webappnews/actions/workflows/run_app.yml/badge.svg)
 
 ## Newsletter service
 - RTLINFO main page scraping
