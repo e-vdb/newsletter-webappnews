@@ -7,6 +7,7 @@ from os.path import dirname, join
 
 from news_scraper.rtl_parser import RtlParser
 from mail.mail_attachment import Mail
+from mail.utils import get_env_var
 
 now = datetime.now()
 
@@ -17,8 +18,7 @@ class Newsletter:
 
     @staticmethod
     def load_mails():
-        filepath = join(Path(dirname(__file__)).parent, 'subscribers.csv')
-        return pd.read_csv(filepath)['Email'].tolist()
+        return get_env_var("EMAILS").split(",")
 
     def generate_wordcloud(self):
         categories = ['ACTU', 'SPORT']
