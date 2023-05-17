@@ -1,5 +1,7 @@
 # newsletter-webappnews
 
+![daily_cronjob](https://github.dev/e-vdb/newsletter-webappnews/actions/workflows/run_app.yml/badge.svg)
+
 ## Newsletter service
 - RTLINFO main page scraping
 - Generation of a Wordcloud to summarize news titles 
