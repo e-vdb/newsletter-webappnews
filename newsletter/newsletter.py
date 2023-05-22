@@ -35,12 +35,12 @@ class Newsletter:
     def scrape_rtl(self):
         rtl_parser = RtlParser()
         rtl_parser.collect_content(url='https://www.rtl.be/')
-        self.articles = rtl_parser.find_main_article(class_="Item", site='actu')
+        self.articles = rtl_parser.extract_articles()
 
     def scrape_rtl_sport(self):
         rtl_parser = RtlParser()
         rtl_parser.collect_content(url='https://www.rtl.be/sport/index.htm')
-        self.articles = rtl_parser.find_main_article(class_="Item hover", site='sport')
+        self.articles = rtl_parser.extract_articles()
 
     def save_wordcloud(self, category):
         words = self.clean_text(" ".join(self.articles['title'].values))
