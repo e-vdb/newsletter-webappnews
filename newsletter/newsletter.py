@@ -1,5 +1,6 @@
+import logging
+
 from wordcloud import WordCloud
-import pandas as pd
 from cleantext import clean
 from datetime import datetime
 from pathlib import Path
@@ -10,6 +11,9 @@ from mail.mail_attachment import Mail
 from mail.utils import get_env_var
 
 now = datetime.now()
+
+
+logging.basicConfig(level=logging.INFO)
 
 
 class Newsletter:
