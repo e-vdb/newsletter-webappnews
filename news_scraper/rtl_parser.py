@@ -1,6 +1,11 @@
+
+import logging
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+
+
+logging.basicConfig(level=logging.INFO)
 
 
 class RtlParser:
@@ -20,13 +25,16 @@ class RtlParser:
         return title, category, image
 
     def extract_articles(self):
-        df_articles = pd.DataFrame(columns=['title', 'category', 'image'])
+        rtl_main_content = []
         for article in self.articles:
             try:
                 title, category, image = self.parse_article(article)
                 row = {'title': title, 'category': category, 'image': image}
-                df_articles = df_articles.append(row, ignore_index=True)
+                rtl_main_content.append(row)
             except Exception:
                 pass
-        return df_articles
+        return pd.DataFrame(
+            rtl_main_content,
+            columns=['title', 'category', 'image']
+        )
 
