@@ -1,6 +1,7 @@
 # newsletter-webappnews
 
 ![daily_cronjob](https://github.com/e-vdb/newsletter-webappnews/actions/workflows/run_app.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Newsletter service
 - RTLINFO main page scraping
