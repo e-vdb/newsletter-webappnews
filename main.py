@@ -11,8 +11,8 @@ def main():
     news = Newsletter()
     news.generate_wordcloud()
     logging.info('Wordcloud picture generated')
-    #news.send_newsletter()
-    #logging.info('Email sent to subscribers')
+    news.send_newsletter()
+    logging.info('Email sent to subscribers')
 
 
 if __name__ == '__main__':
