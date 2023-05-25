@@ -5,12 +5,17 @@ from cleantext import clean
 from datetime import datetime
 from pathlib import Path
 from os.path import dirname, join
+from dotenv import load_dotenv
 
 from news_scraper.rtl_parser import RtlParser
 from mail.mail_attachment import Mail
 from mail.utils import get_env_var
+from mail.constants import (
+    EMAILS
+)
 
 now = datetime.now()
+load_dotenv()
 
 
 logging.basicConfig(level=logging.INFO)
@@ -22,7 +27,7 @@ class Newsletter:
 
     @staticmethod
     def load_mails():
-        return get_env_var("EMAILS").split(",")
+        return get_env_var(EMAILS).split(",")
 
     def generate_wordcloud(self):
         categories = ['ACTU', 'SPORT']
