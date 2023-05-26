@@ -21,10 +21,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: Run the main script
+      - name: Run the main script with the required environment variables
         env:
           PORT: ${{ secrets.PORT }}
           SERVER: ${{ secrets.SERVER }}
           SENDER: ${{ secrets.SENDER }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          EMAILS: ${{ secrets.EMAILS }}
         run: python main.py
